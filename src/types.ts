@@ -1,89 +1,72 @@
 export const funcParams = 'data, theme, echartsInstance, echarts';
 
-const funcBody = `const series = data.series.map((s) => {
-  const sData = s.fields.find((f) => f.type === 'number').values.buffer;
-  const sTime = s.fields.find((f) => f.type === 'time').values.buffer;
-
-  return {
-    name: s.name,
-    type: 'line',
-    showSymbol: false,
-    areaStyle: {
-      opacity: 0.1,
-    },
-    lineStyle: {
-      width: 1,
-    },
-    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
-  };
-});
-
-const axisOption = {
-  axisTick: {
-    show: false,
-  },
-  axisLine: {
-    show: false,
-  },
-  axisLabel: {
-    color: 'rgba(128, 128, 128, .9)',
-  },
-  splitLine: {
-    lineStyle: {
-      color: 'rgba(128, 128, 128, .2)',
-    },
-  },
-};
-
-return {
-  backgroundColor: 'transparent',
-  tooltip: {
-    trigger: 'axis',
-  },
-  legend: {
-    left: '0',
-    bottom: '0',
-    data: data.series.map((s) => s.name),
-    textStyle: {
-      color: 'rgba(128, 128, 128, .9)',
-    },
-  },
-  xAxis: Object.assign(
-    {
-      type: 'time',
-    },
-    axisOption
-  ),
-  yAxis: Object.assign(
-    {
-      type: 'value',
-      min: 'dataMin',
-    },
-    axisOption
-  ),
-  grid: {
-    left: 0,
-    right: 16,
-    top: 6,
-    bottom: 24,
-    containLabel: true,
-  },
-  series,
-};`;
-
-// const getOption = `function (${funcParams}) {
-//   ${funcBody}
-// }`
-// const funcBodyReg = /{\n([\S\s]*)\n}/;
-// const matchResult = getOption.match(funcBodyReg);
-// const funcBody = matchResult ? matchResult[1] : '';
+//*********************************** GRAFANA CLOCK PANEL CODE*************************************************** */
 
 export interface SimpleOptions {
-  followTheme: boolean,
+  followTheme: boolean;
   getOption: string;
+  mode: ClockMode;
+  clockType: ClockType;
+  timezone?: string;
+  bgColor?: string;
+  countdownSettings: CountdownSettings;
+  dateSettings: DateSettings;
+  timeSettings: TimeSettings;
+  timezoneSettings: TimezoneSettings;
+  refreshSettings: RefreshSettings;
 }
 
-export const defaults: SimpleOptions = {
-  followTheme: false,
-  getOption: funcBody,
-};
+export enum ClockMode {
+  time = 'time',
+  countdown = 'countdown',
+}
+
+export enum ClockType {
+  H24 = '24 hour',
+  H12 = '12 hour',
+  Custom = 'custom',
+}
+
+export enum ZoneFormat {
+  name = 'name',
+  nameOffset = 'nameOffset',
+  offsetAbbv = 'offsetAbbv',
+  offset = 'offset',
+  abbv = 'abbv',
+}
+
+export enum FontWeight {
+  normal = 'normal',
+  bold = 'bold',
+}
+
+interface CountdownSettings {
+  endCountdownTime: any;
+  endText: string;
+  customFormat?: string;
+}
+
+interface DateSettings {
+  showDate: boolean;
+  dateFormat: string;
+  locale: string;
+  fontSize: string;
+  fontWeight: FontWeight;
+}
+
+interface TimeSettings {
+  customFormat?: string;
+  fontSize: string;
+  fontWeight: FontWeight;
+}
+
+interface TimezoneSettings {
+  showTimezone: boolean;
+  zoneFormat: ZoneFormat;
+  fontSize: string;
+  fontWeight: FontWeight;
+}
+
+interface RefreshSettings {
+  syncWithDashboard: boolean;
+}

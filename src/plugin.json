@@ -1,7 +1,7 @@
 {
   "type": "panel",
-  "name": "Echarts",
-  "id": "bilibala-echarts-panel",
+  "name": "Echarts2",
+  "id": "bilibala-echarts-panel-2",
   "info": {
     "description": "Echarts panel for grafana",
     "author": {

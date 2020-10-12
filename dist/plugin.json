@@ -1,7 +1,7 @@
 {
   "type": "panel",
-  "name": "Echarts",
-  "id": "bilibala-echarts-panel",
+  "name": "Echarts2",
+  "id": "bilibala-echarts-panel-2",
   "info": {
     "description": "Echarts panel for grafana",
     "author": {
@@ -27,7 +27,7 @@
     ],
     "screenshots": [],
     "version": "2.2.2",
-    "updated": "2020-06-11"
+    "updated": "2020-10-12"
   },
   "dependencies": {
     "grafanaVersion": "6.3.x",
