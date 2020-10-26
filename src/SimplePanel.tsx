@@ -290,4 +290,4 @@ const PartialSimplePanel: React.FC<Props> = ({ options, data, width, height, the
   );
 };
 
-export const SimplePanel = withTheme(PartialSimplePanel); 
+export const SimplePanel = withTheme(PartialSimplePanel);
