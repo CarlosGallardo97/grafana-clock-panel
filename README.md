@@ -6,7 +6,7 @@ Code editor is attached in the edit panel to configure the option of echarts.
 
 Support [echarts-wordcloud](https://github.com/ecomfe/echarts-wordcloud), [echarts-liquidfill](https://github.com/ecomfe/echarts-liquidfill) and [echarts-gl](https://github.com/ecomfe/echarts-gl).
 
-![image](https://github.com/Billiballa/grafana-echarts/blob/master/doc/screenshot.png)
+![image](https://github.com/CarlosGallardo97/grafana-clock-panel/blob/main/doc/screenshot.png)
 
 ## How Use
 
