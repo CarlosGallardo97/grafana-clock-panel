@@ -830,19 +830,6 @@ function addEcharts(builder: PanelOptionsEditorBuilder<SimpleOptions>) {
             offsetCenter: [0, '60%']
           },
           data: [{}]
-        }],
-        graphic: [
-        {
-            type: 'image',
-            id: 'logo',
-            left: 6,
-            top: 6,
-            style: {
-              image: 'https://i.ibb.co/P5XNVwY/softtek-logo2.png" alt="softtek-logo2',
-              width: 60,
-              height: 30,
-              opacity: 1
-            }
         }]
       };`,
   });

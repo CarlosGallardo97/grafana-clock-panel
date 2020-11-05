@@ -236,7 +236,11 @@ const PartialSimplePanel: React.FC<Props> = ({ options, data, width, height, the
     flex-direction: column;
     background-color: ${bgColor ?? ''};
     text-align: right;
-    padding: 0px 5px 5px 0px;
+    padding: 0px 5px 0px 0px;
+    background-image: url('https://i.ibb.co/P5XNVwY/softtek-logo2.png');
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: 5% 95%;
   `;
 
   useEffect(() => {
